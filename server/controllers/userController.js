@@ -1,14 +1,11 @@
-import User from "../models/User";
 import bcrypt from 'bcryptjs';
-import Rol from "../models/Rol";
+import User from "../models/User";
 
 //traer todos los usuarios
 export const getAllUser = async(req, res, next) => {
     let users;
 
-    let rol = await Rol.findById('6285473ead4edb5a224f5d68');
 
-    console.log(rol);
     try {
         users = await User.find();
     } catch (err) {
@@ -90,7 +87,7 @@ export const login = async(req, res, next) => {
     }
 
     if(!existingUser){
-        return res.status(404).json({message: 'Couldnt Find User By This Email '});
+        return res.status(404).json({message: 'Couldnt Find User By This Email'});
     }
 
     const isPasswordCorrect = bcrypt.compareSync(password, existingUser.password);
@@ -100,4 +97,83 @@ export const login = async(req, res, next) => {
     }
 
     return res.status(201).json({message: 'Login Successfull'});
+}
+
+//updateUser falta confirurar addressId
+export const updateUser = async( req, res, next) => {
+    const {firstName, lastName, email, password, user, phone, avatar, addressId} = req.body;
+    const id = req.params.id;
+    let client;
+
+    try {
+        client = await User.findOneByIdAndUpdate(id, {
+            firstName,
+            lastName,
+            email,
+            password,
+            user,
+            phone,
+            avatar,
+            addressId
+        })
+    }catch (err) {
+        return console.log(err);
+    }
+
+    if(!client){
+        return res.status(404).json({message: 'User not found'});
+    }
+
+    return res.status(200).json({client});
+}
+
+//delete a user
+export const deleteUser = async (req, res) => {
+    const id = req.params.id;
+
+    let client;
+
+    try {
+        client = await User.findOneByIdAndRemove(id)
+    }catch (err) {
+        return console.log(err);
+    }
+    return res.status(200).json({message: 'User deleted'});
+}
+
+//get all users by rol
+export const getAllUsersByRol = async(req, res, next) => {
+    const rolId = req.params.rolId;
+    console.log(req.params);
+    let users;
+
+    try {
+        users = await User.find({rolesId: rolId});
+    } catch (err) {
+        return console.log(err);
+    }
+
+    if(!users){
+        return res.status(404).json({message: 'No Users Found'});
+    }
+
+    return res.status(200).json({users});
+}
+
+//filtrar usuarios por nombre
+export const getUsersByName = async(req, res, next) => {
+    const {name} = req.params;
+    let users;
+
+    try {
+        users = await User.find( {user: {$regex: name, $options: 'i'}});
+    } catch (err) {
+        return console.log(err);
+    }
+
+    if(users.length < 1){
+        return res.status(404).json({message: 'No Users Found'});
+    }
+
+    return res.status(200).json({users});
 }

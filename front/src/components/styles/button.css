@@ -1,0 +1,36 @@
+button {
+  background: rgba(166, 65, 65, 0.72);
+  box-shadow: 1px 1px 4px #733d3d;
+  border: none;
+  border-radius: 15px;
+  width: 160px;
+  height: 30px;
+
+  font-family: "Chivo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #402121;
+}
+
+button:hover {
+  transform: scale(1.1);
+  transition: all 1s ease-in-out;
+}
+
+@media screen and (min-width: 481px) {
+  button {
+    width: 225px;
+    height: 35px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  button {
+    height: 45px;
+    border-radius: 30px;
+    font-size: 18px;
+  }
+}

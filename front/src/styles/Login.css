@@ -1,0 +1,305 @@
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../../public/img/fondos/fondoLogin.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #fcdddb;
+}
+
+.containerLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Logo {
+  width: 192px;
+  height: 134px;
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Logo img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.mainLogin {
+  width: 261px;
+  /* height: 350px; */
+  background: var(--white);
+  box-shadow: 4px 4px 15px var(--salmonPink);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  font-family: var(--font-chivo);
+  color: var(--dullRed);
+  text-shadow: 1px 1px 1px #be7676;
+  text-align: center;
+}
+
+.buttonsLoginRegister {
+  display: none;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.inputs {
+  width: 205px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+  border-bottom: 1px solid var(--dullRed);
+  font-family: var(--font-chivo);
+  font-size: 12px;
+  font-style: normal;
+  color: var(--dullRed);
+  text-shadow: 1px 1px 1px #be7676;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon img {
+  width: 95%;
+}
+
+input {
+  border: none;
+  background: none;
+  outline: none;
+  border-bottom: 1px 200px;
+  font-family: var(--font-chivo);
+  font-size: 12px;
+  font-style: normal;
+  color: var(--dullRed);
+  text-shadow: 1px 1px 1px #be7676;
+}
+
+input::placeholder {
+  color: var(--dullRed);
+  text-shadow: 1px 1px 1px #be7676;
+  border: none;
+  background: none;
+}
+
+.separation {
+  width: 165px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.separation > .line {
+  display: inline-flex;
+  width: 35%;
+  height: 2px;
+  background: rgba(166, 65, 65, 0.6);
+}
+
+.socialNetworks {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.optionsLogin {
+  font-size: 12px;
+  width: 80%;
+  height: 55px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.optionsLogin > .lineVertical {
+  display: inline-flex;
+  width: 2px;
+  height: 30px;
+  background: var(--dullRed);
+}
+
+@media screen and (min-width: 481px) {
+  .Logo {
+    width: 290px;
+    height: 205px;
+  }
+
+  .mainLogin {
+    width: 355px;
+  }
+
+  .inputs {
+    width: 270px;
+    height: 45px;
+    margin: 15px 0px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  .separation {
+    width: 270px;
+    height: 27px;
+    margin: 15px;
+  }
+
+  .separation > .line {
+    width: 40%;
+  }
+
+  .socialNetworks > img {
+    width: 50px;
+  }
+
+  .optionsLogin {
+    font-size: 15px;
+    height: 66px;
+    margin: 15px 0;
+  }
+
+  .optionsLogin > .lineVertical {
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  body .main {
+    background-image: url(../../public/img/fondos/sakuraFondoOscuro.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-attachment: fixed;
+    background-color: var(--coffe);
+  }
+
+  .boxContainer {
+    width: 80vw;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px 30px var(--salmonPink);
+    border-radius: 30px;
+    margin: auto;
+
+    background-image: url(../../public/img/fondos/sakuraConFondoBlanco.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-attachment: fixed;
+    background-color: var(--white);
+  }
+
+  .containerLogo {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Logo {
+    width: 90%;
+    height: 40%;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 15%;
+  }
+
+  .mainLogin {
+    width: 50%;
+    height: 100%;
+
+    background: #f2d5e8;
+    border-radius: 0px 30px 30px 0px;
+  }
+
+  .optionsLogin {
+    display: none;
+  }
+
+  .buttonsLoginRegister {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 30px;
+  }
+
+  .buttonsLoginRegister nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 221px;
+    height: 30px;
+
+    background: rgba(166, 65, 65, 0.75);
+    box-shadow: 2px 2px 4px #733d3d;
+    border-radius: 15px;
+  }
+
+  .navLogin ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navLogin ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* background: #a64141;
+    box-shadow: 1px 1px 4px #733d3d;
+    border-radius: 15px 0px 0px 15px; */
+    font-family: var(--font-chivo);
+    font-size: 12px;
+
+    color: var(--white);
+
+    text-shadow: 1px 1px 1px #402121;
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  body .main {
+    background-image: url(../../public/img/fondos/sakuraFondoOscuro.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #3a220a;
+  }
+}

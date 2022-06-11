@@ -1,0 +1,81 @@
+.check {
+  width: 205px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.check label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checked {
+    display: none;
+}
+
+.custom-checkbox {
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--dullRed);
+  border-radius: 2px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+span.custom-checkbox__text {
+  font-family: var(--font-chivo);
+  font-size: 12px;
+  font-style: normal;
+  color: var(--dullRed);
+  text-shadow: 1px 1px 1px #be7676;
+  margin-left: 5px;
+}
+
+input[type="checkbox"]:checked + label > div.custom-checkbox {
+  background-color: var(--dullRed);
+}
+
+input[type="checkbox"]:checked + label > div.custom-checkbox > .checked{
+    display: flex;
+    position: absolute;
+    font-size: 12px;
+    font-family: var(--font-chivo);
+    color: var(--white);
+  }
+
+  @media screen and (min-width: 481px) {
+    .check {
+      width: 270px;
+    height: 45px;
+    margin: 15px 0px;
+    }
+
+    .custom-checkbox {
+      width: 16px;
+      height: 16px;
+      border-radius: 2px;
+    }
+    
+    span.custom-checkbox__text {
+      font-size: 14px;
+      margin-left: 5px;
+    }
+
+    input[type="checkbox"]:checked + label > div.custom-checkbox > .checked{
+        font-size: 14px;
+      }
+  }
+  
+  @media screen and (min-width: 769px) {
+    
+  }

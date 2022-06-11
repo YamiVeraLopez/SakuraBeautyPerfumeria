@@ -1,0 +1,21 @@
+.optionsRegister {
+  font-size: 12px;
+  width: 80%;
+  height: 55px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+@media screen and (min-width: 481px) {
+  .optionsRegister {
+    font-size: 16px;
+    height: 66px;
+    margin: 15px 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+ 
+}

@@ -36,6 +36,26 @@ const productSchema = new Schema({
     },
     size: {
         type: Array
+    },
+    mark: {
+        type: Schema.Types.ObjectId,
+        ref: "Mark"
+    },
+    subCategorie: {
+        type: Schema.Types.ObjectId,
+        ref: "SubCategorie"
+    },
+    outstanding: {
+        type: Boolean,
+        default: false
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+    updatedAt: {
+        type: Date,
+        default: Date.now
     }
 })
 

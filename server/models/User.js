@@ -35,11 +35,14 @@ const userSchema = new Schema({
         ref: "Rol",
         required: true,
     },
-    addressId:[{
+    addressId: [{
         type: mongoose.Types.ObjectId,
-        ref: "Address",
+        ref: "Addresse",
         required: true,
-    }]
+    }],
+    token: {
+        type: String,
+    }
 })
 
 export default mongoose.model('User', userSchema);
